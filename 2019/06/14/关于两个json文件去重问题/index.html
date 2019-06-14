@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近在群里发现群友提了一个问题：a、b两个json文件，想要把a中b的内容给删除。 解决思路通过filter判断a中是否存在b的数据 知识点filter函数filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。 123456789let arr = [2,3,5,4,6,10]let elem = arr.filter(item =&amp;gt; &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-14T04:13:54.837Z">
+<meta property="og:updated_time" content="2019-06-14T04:19:05.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于两个json文件去重问题">
 <meta name="twitter:description" content="最近在群里发现群友提了一个问题：a、b两个json文件，想要把a中b的内容给删除。 解决思路通过filter判断a中是否存在b的数据 知识点filter函数filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。 123456789let arr = [2,3,5,4,6,10]let elem = arr.filter(item =&amp;gt; &amp;#123;">
@@ -401,7 +401,8 @@
 
 <h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const filterData = aJson.filter(item =&gt; &#123;</span><br><span class="line">    if (bJson.find(b =&gt; &#123; return b.data === item.data &#125;)) &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">    return true</span><br><span class="line">&#125;)</span><br><span class="line">console.log(aJson.length)</span><br><span class="line">console.log(filterData.length)</span><br></pre></td></tr></table></figure>
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>努力学习，天天开心！！！</p>
+
       
     </div>
     
