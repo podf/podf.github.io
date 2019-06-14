@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[关于两个json文件去重问题]]></title>
+    <url>%2F2019%2F06%2F14%2F%E5%85%B3%E4%BA%8E%E4%B8%A4%E4%B8%AAjson%E6%96%87%E4%BB%B6%E5%8E%BB%E9%87%8D%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[最近在群里发现群友提了一个问题：a、b两个json文件，想要把a中b的内容给删除。 解决思路通过filter判断a中是否存在b的数据 知识点filter函数filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。 123456789let arr = [2,3,5,4,6,10]let elem = arr.filter(item =&gt; &#123; return item &gt; 3&#125;)/** * 结果：Array(4) [ 5, 4, 6, 10 ] * 返回符合条件的所有元素 */console.log(elem) find函数find()可以检索数组中满足指定条件的第一个元素。如果检索到满足条件的元素，那么返回此元素，否则返回undefined。 123456789let arr = [2,3,5,4,6,10]let elem = arr.find(item =&gt; &#123; return item &gt; 3&#125;)/** * 结果 5* 5是首个满足条件的元素，那么find方法将返回此元素，后面的数组元素将被无视。 */console.log(elem) 实现代码12345678const filterData = aJson.filter(item =&gt; &#123; if (bJson.find(b =&gt; &#123; return b.data === item.data &#125;)) &#123; return false &#125; return true&#125;)console.log(aJson.length)console.log(filterData.length) 总结努力学习，天天开心！！！]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>json</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[操作数组元素的几个函数]]></title>
+    <url>%2F2019%2F06%2F12%2F%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[这些都是对数组操作的常用函数，那他们都有什么作用呢？下面我们来了解一下：push()数组末尾添加一个或多个元素 123456let arr = [2,3,5,4,6,10];arr.push(1,2,3)/** * 输出：Array(9) [ 2, 3, 5, 4, 6, 10, 1, 2, 3 ] */console.log(arr) unshift()数组开头添加一个或多个元素 123456let arr = [2,3,5,4,6,10];arr.unshift(1,2,3)/** * 输出：Array(9) [ 1, 2, 3, 2, 3, 5, 4, 6, 10 ] */console.log(arr) pop()删除数组末尾的一个元素 123456let arr = [2,3,5,4,6,10];arr.pop()/** * 输出：Array(5) [ 2, 3, 5, 4, 6 ] */console.log(arr) shift()删除数组开头的一个元素 123456let arr = [2,3,5,4,6,10];arr.shift()/** * 输出：Array(5) [ 3, 5, 4, 6, 10 ] */console.log(arr)]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[for循环中的下标问题]]></title>
+    <url>%2F2019%2F06%2F12%2Ffor%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84%E4%B8%8B%E6%A0%87%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[#阳光下午，我遇到一个怪现象。。。]]></content>
+      <categories>
+        <category>闲暇之余</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript数据深拷贝实现原理]]></title>
+    <url>%2F2019%2F06%2F12%2F%E6%96%87%E7%AB%A0%E5%BC%95%E5%85%A5%E6%A0%87%E7%AD%BE%2F</url>
+    <content type="text"><![CDATA[#我要开始写博客了]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript数据深拷贝</tag>
+      </tags>
+  </entry>
+</search>
