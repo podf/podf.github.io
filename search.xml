@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[数组去重]]></title>
     <url>%2F2019%2F06%2F23%2F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%2F</url>
-    <content type="text"><![CDATA[问题：除数组中重复项思路：首先，为了方便重复使用，将方法增加到Array.prototype上。创建一个空对象obj，判断对象是否存在可用typeof(obj[item])如果不返回’undefined’即这个数据重复，选用数组中最后一项替换当前重复项。 实现代码123456789101112131415161718Array.prototype.myDistinct = function myDistinct() &#123; let obj = &#123;&#125; for (let index = 0; index &lt; this.length; index++) &#123; let item = this[index] // 判断是否存在在obj中，存在则删除 if(typeof(obj[item]) !== &apos;undefined&apos;) &#123; // 将数组最后一项替换当前重复项 this[index] = this[this.length-1] // 需要重新对比替换后的元素， this.length-- index-- continue &#125; obj[item] = 0 &#125; obj = null return this &#125;]]></content>
+    <content type="text"><![CDATA[问题：除数组中重复项思路：首先，为了方便重复使用，将方法增加到Array.prototype上。创建一个空对象obj，判断对象是否存在可用typeof(obj[item])如果不返回’undefined’即这个数据重复，选用数组中最后一项替换当前重复项。 实现代码123456789101112131415161718Array.prototype.myDistinct = function myDistinct() &#123; let obj = &#123;&#125; for (let index = 0; index &lt; this.length; index++) &#123; let item = this[index] // 判断是否存在在obj中，存在则删除 if(typeof(obj[item]) !== &apos;undefined&apos;) &#123; // 将数组最后一项替换当前重复项 this[index] = this[this.length-1] // 需要重新对比替换后的元素， this.length-- index-- continue &#125; obj[item] = 0 &#125; obj = null return this &#125; 实现方法二知识点Array.from: 将参数转化成数组new Set: Set对象是值的集合，你可以按照插入的顺序迭代它的元素。 Set中的元素只会出现一次，即 Set 中的元素是唯一的。 实现代码： 1234let arr2 = [1, 2, 3, 5, 3, 2, 4]arr2 = Array.from(new Set(arr2))// arr2 = [...new Set(arr2)]console.log(arr2)]]></content>
       <categories>
         <category>javascript</category>
       </categories>
