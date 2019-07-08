@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[快速排序]]></title>
     <url>%2F2019%2F07%2F08%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[无聊之下，发博客 ###快速排序通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 ###实现代码 1234567891011121314151617181920212223Array.prototype.myQuirtSort = function() &#123; const length = this.length if (length &lt; 2) &#123; return this &#125; // 选取一个基本点，这里选择第一个元素 const basic = this[0], leftArr = [], rightArr = [] // 与其他元素进行比较 for (let index = 1; index &lt; length; index++) &#123; if (this[index] &gt;= basic) &#123; rightArr.push(this[index]) &#125; else &#123; leftArr.push(this[index]) &#125; &#125; // 递归调用 return leftArr.myQuirtSort().concat(basic, rightArr.myQuirtSort())&#125;const arr = [5, 3, 7, 4, 1, 9, 9, 8, 6, 2];const res = arr.myQuirtSort()console.log(res)]]></content>
+    <content type="text"><![CDATA[无聊之下，发博客 快速排序通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 实现代码1234567891011121314151617181920212223Array.prototype.myQuirtSort = function() &#123; const length = this.length if (length &lt; 2) &#123; return this &#125; // 选取一个基本点，这里选择第一个元素 const basic = this[0], leftArr = [], rightArr = [] // 与其他元素进行比较 for (let index = 1; index &lt; length; index++) &#123; if (this[index] &gt;= basic) &#123; rightArr.push(this[index]) &#125; else &#123; leftArr.push(this[index]) &#125; &#125; // 递归调用 return leftArr.myQuirtSort().concat(basic, rightArr.myQuirtSort())&#125;const arr = [5, 3, 7, 4, 1, 9, 9, 8, 6, 2];const res = arr.myQuirtSort()console.log(res)]]></content>
       <categories>
         <category>javascript</category>
       </categories>
