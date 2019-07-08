@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[快速排序]]></title>
+    <url>%2F2019%2F07%2F08%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[无聊之下，发博客 ###快速排序通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 ###实现代码 1234567891011121314151617181920212223Array.prototype.myQuirtSort = function() &#123; const length = this.length if (length &lt; 2) &#123; return this &#125; // 选取一个基本点，这里选择第一个元素 const basic = this[0], leftArr = [], rightArr = [] // 与其他元素进行比较 for (let index = 1; index &lt; length; index++) &#123; if (this[index] &gt;= basic) &#123; rightArr.push(this[index]) &#125; else &#123; leftArr.push(this[index]) &#125; &#125; // 递归调用 return leftArr.myQuirtSort().concat(basic, rightArr.myQuirtSort())&#125;const arr = [5, 3, 7, 4, 1, 9, 9, 8, 6, 2];const res = arr.myQuirtSort()console.log(res)]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数组去重]]></title>
     <url>%2F2019%2F06%2F23%2F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%2F</url>
     <content type="text"><![CDATA[问题：除数组中重复项思路：首先，为了方便重复使用，将方法增加到Array.prototype上。创建一个空对象obj，判断对象是否存在可用typeof(obj[item])如果不返回’undefined’即这个数据重复，选用数组中最后一项替换当前重复项。 实现代码123456789101112131415161718Array.prototype.myDistinct = function myDistinct() &#123; let obj = &#123;&#125; for (let index = 0; index &lt; this.length; index++) &#123; let item = this[index] // 判断是否存在在obj中，存在则删除 if(typeof(obj[item]) !== &apos;undefined&apos;) &#123; // 将数组最后一项替换当前重复项 this[index] = this[this.length-1] // 需要重新对比替换后的元素， this.length-- index-- continue &#125; obj[item] = 0 &#125; obj = null return this &#125; 实现方法二知识点Array.from: 将参数转化成数组new Set: Set对象是值的集合，你可以按照插入的顺序迭代它的元素。 Set中的元素只会出现一次，即 Set 中的元素是唯一的。 实现代码： 1234let arr2 = [1, 2, 3, 5, 3, 2, 4]arr2 = Array.from(new Set(arr2))// arr2 = [...new Set(arr2)]console.log(arr2)]]></content>
