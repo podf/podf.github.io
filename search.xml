@@ -66,7 +66,7 @@
   <entry>
     <title><![CDATA[JavaScript数据深拷贝实现原理]]></title>
     <url>%2F2019%2F06%2F12%2F%E6%96%87%E7%AB%A0%E5%BC%95%E5%85%A5%E6%A0%87%E7%AD%BE%2F</url>
-    <content type="text"><![CDATA[#我要开始写博客了]]></content>
+    <content type="text"><![CDATA[深拷贝与浅拷贝形象的来介绍这两个操作： 相同点： 都是拷贝，把一个元素内容拷贝到另一个元素里 不同点： 深拷贝后更改拷贝后的数据不会影响源数据 浅拷贝更改后，两个元素都会发生变化解决思路有两种办法: 1. JSON.parse(JSON.stringify(obj)) 2. 递归判断实现代码1234567891011121314151617// 递归判断代码function deepCopy(obj) &#123; // 判断是否为object类型， 不是则返回 // 基本数据类型不用这样 哈哈哈 if (typeof obj !== &apos;object&apos;) &#123; return &#125; // 判断需要深拷贝对象类型 let newObj = Array.isArray(obj) ? [] : &#123;&#125; for (let i in obj) &#123; // 判断子元素是否为对象 // 是 递归重复判断 // 否 值传递 newObj[i] = typeof obj[i] == &apos;object&apos; ? deepCopy(obj[i]) : obj[i] &#125; return newObj&#125;]]></content>
       <categories>
         <category>javascript</category>
       </categories>
